@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <p class="eyebrow">STUDENT TOOLKIT</p>
+      <h1>Student Calculator</h1>
+      <p class="subtitle">Calculate marks, percentages, averages, and grades.</p>
+    </header>
+
+    <section class="card" aria-labelledby="marks-title">
+      <h2 id="marks-title">Marks Calculator</h2>
+      <p class="hint">Enter marks scored and maximum marks for each subject.</p>
+      <div id="subjects">
+        <div class="subject-row">
+          <label>Subject <input class="subject-name" type="text" placeholder="e.g. Mathematics" value="Mathematics"></label>
+          <label>Scored <input class="scored" type="number" min="0" step="any" placeholder="85" value="85"></label>
+          <label>Maximum <input class="maximum" type="number" min="1" step="any" placeholder="100" value="100"></label>
+          <button class="remove-btn" type="button" aria-label="Remove subject">×</button>
+        </div>
+        <div class="subject-row">
+          <label>Subject <input class="subject-name" type="text" placeholder="e.g. Science" value="Science"></label>
+          <label>Scored <input class="scored" type="number" min="0" step="any" placeholder="90" value="90"></label>
+          <label>Maximum <input class="maximum" type="number" min="1" step="any" placeholder="100" value="100"></label>
+          <button class="remove-btn" type="button" aria-label="Remove subject">×</button>
+        </div>
+        <div class="subject-row">
+          <label>Subject <input class="subject-name" type="text" placeholder="e.g. English" value="English"></label>
+          <label>Scored <input class="scored" type="number" min="0" step="any" placeholder="80" value="80"></label>
+          <label>Maximum <input class="maximum" type="number" min="1" step="any" placeholder="100" value="100"></label>
+          <button class="remove-btn" type="button" aria-label="Remove subject">×</button>
+        </div>
+      </div>
+      <div class="actions">
+        <button id="add-subject" class="secondary" type="button">+ Add subject</button>
+        <button id="calculate" type="button">Calculate results</button>
+      </div>
+      <p id="error" class="error" role="alert"></p>
+      <div id="results" class="results" aria-live="polite">
+        <div class="result"><span>Total scored</span><strong id="total-scored">255</strong></div>
+        <div class="result"><span>Total maximum</span><strong id="total-maximum">300</strong></div>
+        <div class="result"><span>Percentage</span><strong id="percentage">85.00%</strong></div>
+        <div class="result"><span>Average per subject</span><strong id="average">85.00</strong></div>
+        <div class="result"><span>Grade</span><strong id="grade">A</strong></div>
+      </div>
+      <p class="note">Grade guide: A = 90%+, B = 80–89%, C = 70–79%, D = 60–69%, F = below 60%.</p>
+    </section>
+
+    <section class="card" aria-labelledby="basic-title">
+      <h2 id="basic-title">Basic Calculator</h2>
+      <div class="basic-calculator">
+        <input id="display" type="text" inputmode="decimal" placeholder="0" aria-label="Calculator display" readonly>
+        <div class="keypad">
+          <button class="utility" data-action="clear">AC</button>
+          <button class="utility" data-action="backspace">⌫</button>
+          <button data-value="%">%</button>
+          <button class="operator" data-value="÷">÷</button>
+          <button data-value="7">7</button><button data-value="8">8</button><button data-value="9">9</button><button class="operator" data-value="×">×</button>
+          <button data-value="4">4</button><button data-value="5">5</button><button data-value="6">6</button><button class="operator" data-value="−">−</button>
+          <button data-value="1">1</button><button data-value="2">2</button><button data-value="3">3</button><button class="operator" data-value="+">+</button>
+          <button data-value="0" class="zero">0</button><button data-value=".">.</button><button id="equals" class="equals">=</button>
+        </div>
+      </div>
+    </section>
+    <footer>Made for learning • Student Calculator</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
